@@ -1,0 +1,31 @@
+server:
+  port: 8094
+
+spring:
+  config:
+    import: optional:classpath:joutio-local.yml
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/joutio_console
+    username: postgres
+    password: postgres
+
+# URLs locales des services cibles par les actions d'exploitation (prod : Services Kubernetes
+# `http://<application>`, résolus automatiquement).
+joutio:
+  console:
+    services:
+      urls:
+        joutio-identity: http://localhost:8085
+        joutio-theme: http://localhost:8086
+        joutio-social: http://localhost:8087
+        joutio-profile: http://localhost:8088
+        joutio-game: http://localhost:8082
+        joutio-matchmaking: http://localhost:8090
+        joutio-leaderboard: http://localhost:8091
+        joutio-notification: http://localhost:8093
+    # Pas de Prometheus en local par défaut (métriques désactivées ; surcharge possible).
+    prometheus:
+      url: ""

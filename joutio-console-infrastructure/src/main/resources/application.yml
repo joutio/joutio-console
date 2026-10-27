@@ -1,0 +1,28 @@
+spring:
+  config:
+    import: optional:classpath:joutio-defaults.yml
+  application:
+    name: joutio-console
+  profiles:
+    default: local
+
+  autoconfigure:
+    # La console n'embarque PAS le runtime Axon (ni starter, ni buses) : les intercepteurs
+    # Problem* du SDK (ExceptionAutoConfiguration) s'enregistrent sur les bus distribués et
+    # échouent sans eux. Gestion d'erreurs Spring standard à la place (ResponseStatusException).
+    exclude:
+      - com.joutio.microservice.autoconfigure.ExceptionAutoConfiguration
+
+  flyway:
+    locations: classpath:db/migration/console
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+microservice:
+  swagger:
+    description: Joutio Axon Console - exploitation (processors, DLQ, replay, audit)
+  websocket:
+    enabled: false

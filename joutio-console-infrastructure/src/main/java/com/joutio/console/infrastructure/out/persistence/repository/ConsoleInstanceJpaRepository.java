@@ -1,0 +1,18 @@
+package com.joutio.console.infrastructure.out.persistence.repository;
+
+import com.joutio.console.infrastructure.out.persistence.entity.ConsoleInstanceEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.Instant;
+import java.util.List;
+import java.util.Optional;
+
+public interface ConsoleInstanceJpaRepository extends JpaRepository<ConsoleInstanceEntity, Long> {
+
+    Optional<ConsoleInstanceEntity> findByApplicationAndInstanceId(String application, String instanceId);
+
+    List<ConsoleInstanceEntity> findAllByOrderByApplicationAscInstanceIdAsc();
+
+    /** Instances dont l'agent n'a plus poussé depuis le cutoff (purge). */
+    List<ConsoleInstanceEntity> findAllByLastSeenBefore(Instant cutoff);
+}
