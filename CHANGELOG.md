@@ -1,3 +1,9 @@
+## 1.0.0 (2026-10-27)
+
+### Bug Fixes
+
+* rename Joutio console properties file ([a7a22b5](https://github.com/joutio/joutio-console/commit/a7a22b565c3dd3d790f4669ee18e57e5ff2f56ab))
+
 ## [1.5.0](https://github.com/joutio/joutio-console/compare/v1.4.0...v1.5.0) (2026-10-18)
 
 ### Features
