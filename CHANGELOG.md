@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/joutio/joutio-console/compare/v1.0.1...v1.0.2) (2026-11-17)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 1.2.0, segmented processing groups and single-partition Axon topic ([1cd4ff8](https://github.com/joutio/joutio-console/commit/1cd4ff83c7556a4f51160209f13a02df5126e280))
+
 ## [1.0.1](https://github.com/joutio/joutio-console/compare/v1.0.0...v1.0.1) (2026-11-17)
 
 ### Bug Fixes
