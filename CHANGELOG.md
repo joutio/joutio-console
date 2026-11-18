@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/joutio/joutio-console/compare/v1.0.2...v1.0.3) (2026-11-18)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 2.0.0, idle-friendly processors and bytea Axon schema ([44fd4b3](https://github.com/joutio/joutio-console/commit/44fd4b394ca0554b0287608e405bc7c634bab4b5))
+
 ## [1.0.2](https://github.com/joutio/joutio-console/compare/v1.0.1...v1.0.2) (2026-11-17)
 
 ### Bug Fixes
