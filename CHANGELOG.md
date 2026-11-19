@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/joutio/joutio-console/compare/v1.0.3...v1.0.4) (2026-11-19)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 2.1.0, consistent command routing across replicas ([f2844aa](https://github.com/joutio/joutio-console/commit/f2844aa9ce1339e73cd57e71544df7e300fe12bc))
+
 ## [1.0.3](https://github.com/joutio/joutio-console/compare/v1.0.2...v1.0.3) (2026-11-18)
 
 ### Bug Fixes
