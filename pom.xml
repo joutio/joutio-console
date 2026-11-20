@@ -13,7 +13,7 @@
     </parent>
 
     <artifactId>joutio-console</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.9</version>
     <packaging>pom</packaging>
 
     <name>joutio-console</name>

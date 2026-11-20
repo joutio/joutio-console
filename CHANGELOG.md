@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/joutio/joutio-console/compare/v1.0.8...v1.0.9) (2026-11-20)
+
+### Bug Fixes
+
+* **docker:** rebuild on patched base images ([ea54731](https://github.com/joutio/joutio-console/commit/ea5473121e36795d0d757aac892e5a07529379b1))
+
 ## [1.0.8](https://github.com/joutio/joutio-console/compare/v1.0.7...v1.0.8) (2026-11-20)
 
 ### Bug Fixes
