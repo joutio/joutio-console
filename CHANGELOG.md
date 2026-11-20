@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/joutio/joutio-console/compare/v1.0.4...v1.0.5) (2026-11-20)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 2.2.0, kafka consumer, segment and rebalancer metrics ([2083058](https://github.com/joutio/joutio-console/commit/20830582306f7931e02927cc180eefd8b445da85))
+
 ## [1.0.4](https://github.com/joutio/joutio-console/compare/v1.0.3...v1.0.4) (2026-11-19)
 
 ### Bug Fixes
