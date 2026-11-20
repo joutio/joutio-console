@@ -1,3 +1,9 @@
+## [1.0.11](https://github.com/joutio/joutio-console/compare/v1.0.10...v1.0.11) (2026-11-20)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 2.4.1 with patched dependencies ([a574b7f](https://github.com/joutio/joutio-console/commit/a574b7f27f896e28540f0bc6b200dcca8666c8bb))
+
 ## [1.0.10](https://github.com/joutio/joutio-console/compare/v1.0.9...v1.0.10) (2026-11-20)
 
 ### Performance Improvements
