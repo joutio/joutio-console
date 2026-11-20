@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/joutio/joutio-console/compare/v1.0.6...v1.0.7) (2026-11-20)
+
+### Bug Fixes
+
+* **deps:** joutio-parent 2.3.0, readiness waits for instance-scoped processors ([4abdcb1](https://github.com/joutio/joutio-console/commit/4abdcb13e75c5fbe4f14f8265ae82c6259b0047d))
+
 ## [1.0.6](https://github.com/joutio/joutio-console/compare/v1.0.5...v1.0.6) (2026-11-20)
 
 ### Bug Fixes
