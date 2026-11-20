@@ -1,3 +1,9 @@
+## [1.0.10](https://github.com/joutio/joutio-console/compare/v1.0.9...v1.0.10) (2026-11-20)
+
+### Performance Improvements
+
+* **docker:** JDK 25 AOT cache at startup ([8c80e8b](https://github.com/joutio/joutio-console/commit/8c80e8b4688af79e5b44723a636abb2372e3d1b4))
+
 ## [1.0.9](https://github.com/joutio/joutio-console/compare/v1.0.8...v1.0.9) (2026-11-20)
 
 ### Bug Fixes
