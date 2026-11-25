@@ -1,3 +1,9 @@
+## [1.0.12](https://github.com/joutio/joutio-console/compare/v1.0.11...v1.0.12) (2026-11-25)
+
+### Bug Fixes
+
+* **console:** read handlers from the gRPC bus members ([9513449](https://github.com/joutio/joutio-console/commit/951344940fc32a8bacb81078fe6f82d44a0021a6))
+
 ## [1.0.11](https://github.com/joutio/joutio-console/compare/v1.0.10...v1.0.11) (2026-11-20)
 
 ### Bug Fixes
