@@ -45,14 +45,6 @@ public class ServiceActionClient {
         return exchange(application, HttpMethod.POST, path, body);
     }
 
-    /**
-     * Appel GET d'un endpoint <b>racine</b> du service (ex. {@code /query-capabilities},
-     * {@code /command-capabilities}) — hors préfixe interne.
-     */
-    public String getService(String application, String path) {
-        return exchangeUrl(properties.baseUrl(application) + path, HttpMethod.GET, null);
-    }
-
     /** Appel à l'adresse d'une instance précise (`ip:port`) — ciblage des pods multi-réplicas. */
     public String getAt(String address, String path) {
         return exchangeAt(address, HttpMethod.GET, path, null);

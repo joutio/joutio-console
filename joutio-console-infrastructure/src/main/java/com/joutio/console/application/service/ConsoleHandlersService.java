@@ -17,9 +17,8 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Liste des handlers <b>commandes</b> et <b>queries</b> d'une application, lue depuis les
- * endpoints de capacités déjà exposés par les services
- * ({@code /command-capabilities} — filtre Axon sérialisé — et {@code /query-capabilities}).
+ * Liste des handlers <b>commandes</b> et <b>queries</b> d'une application, lue dans les membres du bus gRPC qu'elle
+ * voit ({@code /internal/console/members}) : le membre local annonce les capacités du pod interrogé.
  * Résultat mis en cache 30 s (les handlers ne changent qu'au déploiement).
  */
 @Service
@@ -50,9 +49,9 @@ public class ConsoleHandlersService {
     private Handlers fetch(String application, List<String> instanceIds) {
         for (String instanceId : instanceIds) {
             try {
-                Set<String> queries = parseQueries(client.getService(application, "/query-capabilities"));
-                Set<String> commands = parseCommands(client.getService(application, "/command-capabilities"));
-                return new Handlers(List.copyOf(commands), List.copyOf(queries));
+                JsonNode self = localMember(client.get(application, "/members"));
+                return new Handlers(List.copyOf(readNames(self.path("commands"))),
+                        List.copyOf(readNames(self.path("queries"))));
             } catch (Exception exception) {
                 logger.debug("Could not read capabilities of {} ({}): {}",
                         application, instanceId, exception.toString());
@@ -62,27 +61,17 @@ public class ConsoleHandlersService {
         return new Handlers(List.of(), List.of());
     }
 
-    private Set<String> parseQueries(String json) {
+    private JsonNode localMember(String json) {
         try {
-            JsonNode root = objectMapper.readTree(json);
-            return readNames(root.path("queryNames"));
-        } catch (Exception exception) {
-            throw new IllegalStateException("Unreadable query capabilities", exception);
-        }
-    }
-
-    private Set<String> parseCommands(String json) {
-        try {
-            JsonNode root = objectMapper.readTree(json);
-            String serializedFilter = root.path("serializedCommandFilter").asText("");
-            if (serializedFilter.isBlank()) {
-                return Set.of();
+            for (JsonNode member : objectMapper.readTree(json)) {
+                if (member.path("local").asBoolean(false)) {
+                    return member;
+                }
             }
-            JsonNode filter = objectMapper.readTree(serializedFilter);
-            return readNames(filter.path("commandNames"));
         } catch (Exception exception) {
-            throw new IllegalStateException("Unreadable command capabilities", exception);
+            throw new IllegalStateException("Unreadable bus members", exception);
         }
+        throw new IllegalStateException("Local member not yet discovered");
     }
 
     private static Set<String> readNames(JsonNode array) {

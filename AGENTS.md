@@ -33,7 +33,7 @@ Lire : `../../AGENTS.md`, la section console du SDK (`libraries/joutio-sdk/AGENT
 |---|---|---|
 | `POST /internal/ingest/snapshot` | JWT M2M, jamais exposé par l'ingress | instantané d'un agent (`v1`), `204` |
 | `GET /api/console/version`, `/dashboard` | `ROLE_ADMIN` | version ; tableau de bord (réplicas, processors, DLQ, débits, volumétrie) |
-| `GET /api/console/applications[/{application}]` | `ROLE_ADMIN` | instances ; détail (handlers via `/command-capabilities` et `/query-capabilities`, processors) |
+| `GET /api/console/applications[/{application}]` | `ROLE_ADMIN` | instances ; détail (handlers lus dans le membre local de `/internal/console/members`, processors) |
 | `GET /api/console/processors?application=` · `/processors/{application}/{instanceId}/{name}` | `ROLE_ADMIN` | processors, segments |
 | `GET /api/console/metrics/{applications\|processors\|messages}/…?range=1h\|6h\|24h` | `ROLE_ADMIN` | séries Prometheus (requêtes fixes) |
 | `GET /api/console/search/events?application=&aggregateId=` · `/events/by-type` · `/snapshots` | `ROLE_ADMIN` | lecture de l'event store |
